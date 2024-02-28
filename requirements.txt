@@ -3,3 +3,7 @@ gunicorn==21.2.0
 packaging==23.2
 pytz==2024.1
 sqlparse==0.4.4
+black
+flake8
+coveralls
+urllib3<2.0

@@ -6,9 +6,6 @@ python:
 install:
   - pip install 'urllib3<2.0'
   - pip install -r requirements.txt
-  - pip install black
-  - pip install flake8
-  - pip install coveralls
 
 before_script:
   - python manage.py migrate
@@ -16,7 +13,7 @@ before_script:
 script:
   - black --check .
   - flake8 .
-  - coverage run --source=mysite,polls manage.py test
+  - coverage run manage.py test
 
 after_script:
   - coveralls
@@ -30,4 +27,5 @@ deploy:
   env: "polls-env"
   bucket_name: "elasticbeanstalk-us-west-2-654654401510"
   on:
-      branch: main
+    repo: gamSeier/swe1-app
+    branch: main
